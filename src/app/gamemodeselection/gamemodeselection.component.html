@@ -1,35 +1,72 @@
 <p>gamemodeselection works!</p>
-<button
-  mat-button
-  (click)="toggleButtonSanft()"
-  [ngClass]="{
-    'disabled-button': isSanftButtonDisabled,
-    'enabled-button': !isSanftButtonDisabled
-  }"
->
-  {{ isSanftButtonDisabled ? "sanft" : "sanft" }}
-</button>
+<div class="button-container">
+  <hr />
+  <h3>Allgemeine Fragen</h3>
+  <button
+    mat-button
+    (click)="toggleButtonSanftAllg()"
+    [ngClass]="{
+      'disabled-button': isSanftAllgButtonDisabled,
+      'enabled-button': !isSanftAllgButtonDisabled
+    }"
+  >
+    {{ isSanftAllgButtonDisabled ? "sanft" : "sanft" }}
+  </button>
 
-<button
-  mat-button
-  (click)="toggleButtonMittel()"
-  [ngClass]="{
-    'disabled-button': isMittelButtonDisabled,
-    'enabled-button': !isMittelButtonDisabled
-  }"
->
-  {{ isMittelButtonDisabled ? "mittel" : "mittel" }}
-</button>
+  <button
+    mat-button
+    (click)="toggleButtonMittelAllg()"
+    [ngClass]="{
+      'disabled-button': isMittelAllgButtonDisabled,
+      'enabled-button': !isMittelAllgButtonDisabled
+    }"
+  >
+    {{ isMittelAllgButtonDisabled ? "mittel" : "mittel" }}
+  </button>
 
-<button
-  mat-button
-  (click)="toggleButtonHart()"
-  [ngClass]="{
-    'disabled-button': isHartButtonDisabled,
-    'enabled-button': !isHartButtonDisabled
-  }"
->
-  {{ isHartButtonDisabled ? "hart" : "hart" }}
-</button>
+  <button
+    mat-button
+    (click)="toggleButtonHartAllg()"
+    [ngClass]="{
+      'disabled-button': isHartAllgButtonDisabled,
+      'enabled-button': !isHartAllgButtonDisabled
+    }"
+  >
+    {{ isHartAllgButtonDisabled ? "hart" : "hart" }}
+  </button>
+  <hr />
+  <button
+    mat-button
+    (click)="toggleButtonSanftSex()"
+    [ngClass]="{
+      'disabled-button': isSanftSexButtonDisabled,
+      'enabled-button': !isSanftSexButtonDisabled
+    }"
+  >
+    {{ isSanftSexButtonDisabled ? "sanft" : "sanft" }}
+  </button>
 
+  <button
+    mat-button
+    (click)="toggleButtonMittelSex()"
+    [ngClass]="{
+      'disabled-button': isMittelSexButtonDisabled,
+      'enabled-button': !isMittelSexButtonDisabled
+    }"
+  >
+    {{ isMittelSexButtonDisabled ? "mittel" : "mittel" }}
+  </button>
+
+  <button
+    mat-button
+    (click)="toggleButtonHartSex()"
+    [ngClass]="{
+      'disabled-button': isHartSexButtonDisabled,
+      'enabled-button': !isHartSexButtonDisabled
+    }"
+  >
+    {{ isHartSexButtonDisabled ? "hart" : "hart" }}
+  </button>
+  <hr />
+</div>
 <router-outlet></router-outlet>

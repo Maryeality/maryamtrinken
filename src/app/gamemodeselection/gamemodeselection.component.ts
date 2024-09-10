@@ -11,18 +11,29 @@ import { CommonModule } from '@angular/common';
   styleUrl: './gamemodeselection.component.scss',
 })
 export class GamemodeselectionComponent {
-  isSanftButtonDisabled = true;
-  isMittelButtonDisabled = true;
-  isHartButtonDisabled = true;
+  isSanftAllgButtonDisabled = true;
+  isMittelAllgButtonDisabled = true;
+  isHartAllgButtonDisabled = true;
+  isSanftSexButtonDisabled = true;
+  isMittelSexButtonDisabled = true;
+  isHartSexButtonDisabled = true;
 
-  toggleButtonSanft() {
-    this.isSanftButtonDisabled = !this.isSanftButtonDisabled;
+  toggleButtonSanftAllg() {
+    this.isSanftAllgButtonDisabled = !this.isSanftAllgButtonDisabled;
   }
-  toggleButtonMittel() {
-    this.isMittelButtonDisabled = !this.isMittelButtonDisabled;
+  toggleButtonMittelAllg() {
+    this.isMittelAllgButtonDisabled = !this.isMittelAllgButtonDisabled;
   }
-
-  toggleButtonHart() {
-    this.isHartButtonDisabled = !this.isHartButtonDisabled;
+  toggleButtonHartAllg() {
+    this.isHartAllgButtonDisabled = !this.isHartAllgButtonDisabled;
+  }
+  toggleButtonSanftSex() {
+    this.isSanftSexButtonDisabled = !this.isSanftSexButtonDisabled;
+  }
+  toggleButtonMittelSex() {
+    this.isMittelSexButtonDisabled = !this.isMittelSexButtonDisabled;
+  }
+  toggleButtonHartSex() {
+    this.isHartSexButtonDisabled = !this.isHartSexButtonDisabled;
   }
 }

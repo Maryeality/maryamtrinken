@@ -1,3 +1,10 @@
+.button-container {
+  display: flex;
+  justify-content: center; /* Horizontale Zentrierung der Buttons */
+  align-items: center; /* Vertikale Zentrierung der Buttons */
+  height: 100vh; /* Optional: Höhe auf 100% des Viewports setzen */
+}
+
 .enabled-button {
   background-color: #75407c;
   color: rgb(255, 246, 246) !important;
