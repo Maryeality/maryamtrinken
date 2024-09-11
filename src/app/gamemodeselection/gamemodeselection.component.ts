@@ -1,5 +1,5 @@
-import { Component, NgModule } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterOutlet, Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
@@ -17,6 +17,10 @@ export class GamemodeselectionComponent {
   isSanftSexButtonDisabled = true;
   isMittelSexButtonDisabled = true;
   isHartSexButtonDisabled = true;
+  isSanftDarkButtonDisabled = true;
+  isMittelDarkButtonDisabled = true;
+  isHartDarkButtonDisabled = true;
+  isGamestartButton = true;
 
   toggleButtonSanftAllg() {
     this.isSanftAllgButtonDisabled = !this.isSanftAllgButtonDisabled;
@@ -35,5 +39,21 @@ export class GamemodeselectionComponent {
   }
   toggleButtonHartSex() {
     this.isHartSexButtonDisabled = !this.isHartSexButtonDisabled;
+  }
+  toggleButtonSanftDark() {
+    this.isSanftDarkButtonDisabled = !this.isSanftDarkButtonDisabled;
+  }
+  toggleButtonMittelDark() {
+    this.isMittelDarkButtonDisabled = !this.isMittelDarkButtonDisabled;
+  }
+  toggleButtonHartDark() {
+    this.isHartDarkButtonDisabled = !this.isHartDarkButtonDisabled;
+  }
+
+  constructor(private router: Router) {}
+
+  onGamestartClick() {
+    console.log('Button wurde geklickt');
+    this.router.navigate(['/wahrheit']);
   }
 }

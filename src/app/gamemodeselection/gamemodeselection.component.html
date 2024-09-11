@@ -1,7 +1,8 @@
-<p>gamemodeselection works!</p>
+<hr />
+<div class="kategorien-container">
+  <h3>Allgemeine Fragen <span class="umbruch"></span></h3>
+</div>
 <div class="button-container">
-  <hr />
-  <h3>Allgemeine Fragen</h3>
   <button
     mat-button
     (click)="toggleButtonSanftAllg()"
@@ -34,7 +35,12 @@
   >
     {{ isHartAllgButtonDisabled ? "hart" : "hart" }}
   </button>
-  <hr />
+</div>
+<hr />
+<div class="kategorien-container">
+  <h3>Sexuelle Fragen</h3>
+</div>
+<div class="button-container">
   <button
     mat-button
     (click)="toggleButtonSanftSex()"
@@ -67,6 +73,53 @@
   >
     {{ isHartSexButtonDisabled ? "hart" : "hart" }}
   </button>
-  <hr />
+</div>
+<hr />
+<div class="kategorien-container">
+  <h3>Depressive Fragen</h3>
+</div>
+<div class="button-container">
+  <button
+    mat-button
+    (click)="toggleButtonSanftDark()"
+    [ngClass]="{
+      'disabled-button': isSanftDarkButtonDisabled,
+      'enabled-button': !isSanftDarkButtonDisabled
+    }"
+  >
+    {{ isSanftDarkButtonDisabled ? "sanft" : "sanft" }}
+  </button>
+
+  <button
+    mat-button
+    (click)="toggleButtonMittelDark()"
+    [ngClass]="{
+      'disabled-button': isMittelDarkButtonDisabled,
+      'enabled-button': !isMittelDarkButtonDisabled
+    }"
+  >
+    {{ isMittelDarkButtonDisabled ? "mittel" : "mittel" }}
+  </button>
+
+  <button
+    mat-button
+    (click)="toggleButtonHartDark()"
+    [ngClass]="{
+      'disabled-button': isHartDarkButtonDisabled,
+      'enabled-button': !isHartDarkButtonDisabled
+    }"
+  >
+    {{ isHartDarkButtonDisabled ? "hart" : "hart" }}
+  </button>
+</div>
+<hr />
+<div class="button-container">
+  <button
+    mat-button
+    (click)="onGamestartClick()"
+    [ngClass]="{ 'gamestart-button': isGamestartButton }"
+  >
+    Spiel starten
+  </button>
 </div>
 <router-outlet></router-outlet>
