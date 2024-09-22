@@ -55,5 +55,6 @@ export class GamemodeselectionComponent {
   onGamestartClick() {
     console.log('Button wurde geklickt');
     this.router.navigate(['/wahrheit']);
+    // if !this.isSanftAllgButtonDisabled =
   }
 }

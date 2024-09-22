@@ -1,4 +1,4 @@
 <li *ngFor="let frage of frage$ | async">
-  {{ frage.inhalt }}
+  {{ frage.inhalt }} {{ frage.art }} {{ frage.intensitaet }}
 </li>
 <router-outlet></router-outlet>

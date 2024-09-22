@@ -5,12 +5,16 @@ import {
   collectionData,
   CollectionReference,
   Firestore,
+  query,
+  where,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { CommonModule, NgForOf } from '@angular/common';
 
 interface Frage {
   inhalt: string;
+  art: string;
+  intensitaet: string;
 }
 
 @Component({
@@ -21,6 +25,7 @@ interface Frage {
   styleUrl: './gamemodewahrheit.component.scss',
 })
 export class GamemodewahrheitComponent {
+  qus: [] = [];
   frage$: Observable<Frage[]>;
   firestore: Firestore = inject(Firestore);
   frageCollection: CollectionReference;
@@ -28,5 +33,10 @@ export class GamemodewahrheitComponent {
   constructor() {
     this.frageCollection = collection(this.firestore, 'fragen');
     this.frage$ = collectionData<Frage>(this.frageCollection);
+    const q = query(this.frageCollection, where('kategorieAllg', '==', 'true'));
   }
+  // abfrage() {
+  // if (frage.kategorieAllg == true) {
+
+  //}
 }

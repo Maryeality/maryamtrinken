@@ -8,9 +8,8 @@ describe('GamemodewahrheitComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GamemodewahrheitComponent]
-    })
-    .compileComponents();
+      imports: [GamemodewahrheitComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GamemodewahrheitComponent);
     component = fixture.componentInstance;
