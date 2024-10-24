@@ -7,5 +7,5 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'game', component: GamemodeselectionComponent },
   { path: 'wahrheit', component: GamemodewahrheitComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'game', pathMatch: 'full' },
 ];
