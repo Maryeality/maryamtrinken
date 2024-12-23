@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet, Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { ButtonListService } from '../button-list.service';
 
 @Component({
   selector: 'app-gamemodeselection',
@@ -21,6 +22,8 @@ export class GamemodeselectionComponent {
   isMittelDarkButtonDisabled = true;
   isHartDarkButtonDisabled = true;
   isGamestartButton = true;
+
+  buttonsList: string[] = [];
 
   toggleButtonSanftAllg() {
     this.isSanftAllgButtonDisabled = !this.isSanftAllgButtonDisabled;
@@ -50,11 +53,25 @@ export class GamemodeselectionComponent {
     this.isHartDarkButtonDisabled = !this.isHartDarkButtonDisabled;
   }
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private buttonListService: ButtonListService
+  ) {}
 
   onGamestartClick() {
     console.log('Button wurde geklickt');
+    this.buttonsList = [];
+    if (!this.isSanftAllgButtonDisabled) this.buttonsList.push('SanftAllg');
+    if (!this.isMittelAllgButtonDisabled) this.buttonsList.push('MittelAllg');
+    if (!this.isHartAllgButtonDisabled) this.buttonsList.push('HartAllg');
+    if (!this.isSanftSexButtonDisabled) this.buttonsList.push('SanftSex');
+    if (!this.isMittelSexButtonDisabled) this.buttonsList.push('MittelSex');
+    if (!this.isHartSexButtonDisabled) this.buttonsList.push('HartSex');
+    if (!this.isSanftDarkButtonDisabled) this.buttonsList.push('SanftDark');
+    if (!this.isMittelDarkButtonDisabled) this.buttonsList.push('MittelDark');
+    if (!this.isHartDarkButtonDisabled) this.buttonsList.push('HartDark');
+    //console.log('Nicht deaktivierte Buttons:', this.buttonsList);
+    this.buttonListService.setButtonsList(this.buttonsList);
     this.router.navigate(['/wahrheit']);
-    // if !this.isSanftAllgButtonDisabled =
   }
 }

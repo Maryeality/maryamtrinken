@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
+  and,
   collection,
   collectionData,
   CollectionReference,
@@ -10,6 +11,7 @@ import {
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { CommonModule, NgForOf } from '@angular/common';
+import { ButtonListService } from '../button-list.service';
 
 interface Frage {
   inhalt: string;
@@ -24,19 +26,32 @@ interface Frage {
   templateUrl: './gamemodewahrheit.component.html',
   styleUrl: './gamemodewahrheit.component.scss',
 })
-export class GamemodewahrheitComponent {
+export class GamemodewahrheitComponent implements OnInit {
   qus: [] = [];
   frage$: Observable<Frage[]>;
   firestore: Firestore = inject(Firestore);
   frageCollection: CollectionReference;
+  buttonsList: string[] = [];
 
-  constructor() {
+  constructor(private buttonListService: ButtonListService) {
     this.frageCollection = collection(this.firestore, 'fragen');
     this.frage$ = collectionData<Frage>(this.frageCollection);
-    const q = query(this.frageCollection, where('kategorieAllg', '==', 'true'));
   }
-  // abfrage() {
-  // if (frage.kategorieAllg == true) {
 
-  //}
+  ngOnInit(): void {
+    this.buttonsList = this.buttonListService.getButtonsList();
+    console.log('Button-Liste:', this.buttonsList);
+    if (this.buttonsList.includes('SanftAllg')) {
+      const q = query(
+        this.frageCollection,
+        where('kategorieAllg', '==', 'true')
+      );
+      this.frage$ = collectionData<Frage>(q);
+      this.frage$.subscribe((data) => {
+        console.log('Gefilterte Daten:', data);
+      });
+    } else {
+      console.log('Keine passende Frage');
+    }
+  }
 }
