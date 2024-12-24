@@ -24,16 +24,16 @@ interface Frage {
 @Component({
   selector: 'app-gamemodewahrheit',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, CommonModule],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './gamemodewahrheit.component.html',
   styleUrl: './gamemodewahrheit.component.scss',
 })
 export class GamemodewahrheitComponent implements OnInit {
   private allQuestions = new BehaviorSubject<Frage[]>([]);
-  private usedQuestions: Frage[] = []; // Fragen, die bereits gezeigt wurden
+  private usedQuestions: Frage[] = [];
   frage$: Observable<Frage[]> = this.allQuestions.asObservable();
-  currentQuestion: Frage | null = null; // Aktuelle Frage
-  gameOver = false; // Status für Spielende
+  currentQuestion: Frage | null = null;
+  gameOver = false;
 
   firestore: Firestore = inject(Firestore);
   frageCollection: CollectionReference;
@@ -75,20 +75,5 @@ export class GamemodewahrheitComponent implements OnInit {
 
   private addQuestions(newQuestions: Frage[]): void {
     this.allQuestions.next([...this.allQuestions.value, ...newQuestions]);
-  }
-
-  getRandomQuestion(): void {
-    const remainingQuestions = this.allQuestions.value.filter(
-      (q) => !this.usedQuestions.includes(q)
-    );
-
-    if (remainingQuestions.length > 0) {
-      const randomIndex = Math.floor(Math.random() * remainingQuestions.length);
-      this.currentQuestion = remainingQuestions[randomIndex];
-      this.usedQuestions.push(this.currentQuestion); // Markiere die Frage als verwendet
-    } else {
-      this.gameOver = true; // Keine Fragen mehr verfügbar
-      this.currentQuestion = null;
-    }
   }
 }

@@ -1,10 +1,8 @@
 <div *ngIf="frage$ | async as fragen; else error">
   <ul>
-    <div class="questions">
-      <li *ngFor="let frage of fragen">
-        {{ frage.inhalt }} - {{ frage.art }} - {{ frage.intensitaet }}
-      </li>
-    </div>
+    <li *ngFor="let frage of fragen">
+      {{ frage.inhalt }} - {{ frage.art }} - {{ frage.intensitaet }}
+    </li>
   </ul>
 </div>
 
