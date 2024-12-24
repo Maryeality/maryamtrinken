@@ -14,13 +14,13 @@ import { ButtonListService } from '../button-list.service';
 export class GamemodeselectionComponent {
   isSanftAllgButtonDisabled = true;
   isMittelAllgButtonDisabled = true;
-  isHartAllgButtonDisabled = true;
+  isHardAllgButtonDisabled = true;
   isSanftSexButtonDisabled = true;
   isMittelSexButtonDisabled = true;
-  isHartSexButtonDisabled = true;
+  isHardSexButtonDisabled = true;
   isSanftDarkButtonDisabled = true;
   isMittelDarkButtonDisabled = true;
-  isHartDarkButtonDisabled = true;
+  isHardDarkButtonDisabled = true;
   isGamestartButton = true;
 
   buttonsList: string[] = [];
@@ -31,8 +31,8 @@ export class GamemodeselectionComponent {
   toggleButtonMittelAllg() {
     this.isMittelAllgButtonDisabled = !this.isMittelAllgButtonDisabled;
   }
-  toggleButtonHartAllg() {
-    this.isHartAllgButtonDisabled = !this.isHartAllgButtonDisabled;
+  toggleButtonHardAllg() {
+    this.isHardAllgButtonDisabled = !this.isHardAllgButtonDisabled;
   }
   toggleButtonSanftSex() {
     this.isSanftSexButtonDisabled = !this.isSanftSexButtonDisabled;
@@ -40,8 +40,8 @@ export class GamemodeselectionComponent {
   toggleButtonMittelSex() {
     this.isMittelSexButtonDisabled = !this.isMittelSexButtonDisabled;
   }
-  toggleButtonHartSex() {
-    this.isHartSexButtonDisabled = !this.isHartSexButtonDisabled;
+  toggleButtonHardSex() {
+    this.isHardSexButtonDisabled = !this.isHardSexButtonDisabled;
   }
   toggleButtonSanftDark() {
     this.isSanftDarkButtonDisabled = !this.isSanftDarkButtonDisabled;
@@ -49,8 +49,8 @@ export class GamemodeselectionComponent {
   toggleButtonMittelDark() {
     this.isMittelDarkButtonDisabled = !this.isMittelDarkButtonDisabled;
   }
-  toggleButtonHartDark() {
-    this.isHartDarkButtonDisabled = !this.isHartDarkButtonDisabled;
+  toggleButtonHardDark() {
+    this.isHardDarkButtonDisabled = !this.isHardDarkButtonDisabled;
   }
 
   constructor(
@@ -63,13 +63,13 @@ export class GamemodeselectionComponent {
     this.buttonsList = [];
     if (!this.isSanftAllgButtonDisabled) this.buttonsList.push('SanftAllg');
     if (!this.isMittelAllgButtonDisabled) this.buttonsList.push('MittelAllg');
-    if (!this.isHartAllgButtonDisabled) this.buttonsList.push('HartAllg');
+    if (!this.isHardAllgButtonDisabled) this.buttonsList.push('HardAllg');
     if (!this.isSanftSexButtonDisabled) this.buttonsList.push('SanftSex');
     if (!this.isMittelSexButtonDisabled) this.buttonsList.push('MittelSex');
-    if (!this.isHartSexButtonDisabled) this.buttonsList.push('HartSex');
+    if (!this.isHardSexButtonDisabled) this.buttonsList.push('HardSex');
     if (!this.isSanftDarkButtonDisabled) this.buttonsList.push('SanftDark');
     if (!this.isMittelDarkButtonDisabled) this.buttonsList.push('MittelDark');
-    if (!this.isHartDarkButtonDisabled) this.buttonsList.push('HartDark');
+    if (!this.isHardDarkButtonDisabled) this.buttonsList.push('hardDark');
     //console.log('Nicht deaktivierte Buttons:', this.buttonsList);
     this.buttonListService.setButtonsList(this.buttonsList);
     this.router.navigate(['/wahrheit']);
