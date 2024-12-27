@@ -34,6 +34,7 @@ export class GamemodewahrheitComponent implements OnInit {
   frage$: Observable<Frage[]> = this.allQuestions.asObservable();
   currentQuestion: Frage | null = null;
   gameOver = false;
+  isNextQuestionButtonDisabled = true;
 
   firestore: Firestore = inject(Firestore);
   frageCollection: CollectionReference;
@@ -68,12 +69,50 @@ export class GamemodewahrheitComponent implements OnInit {
         );
         collectionData<Frage>(q).subscribe((data: Frage[]) => {
           this.addQuestions(data);
+
+          if (!this.currentQuestion && this.allQuestions.value.length > 0) {
+            this.currentQuestion = this.allQuestions.value[0];
+          }
         });
       }
     });
   }
 
   private addQuestions(newQuestions: Frage[]): void {
+    //newQuestions ist data
     this.allQuestions.next([...this.allQuestions.value, ...newQuestions]);
+  }
+
+  onNextQuestionClick() {
+    console.log('Nächste Frage geklickt');
+    if (!this.currentQuestion && this.allQuestions.value.length === 0) {
+      console.log('Alle Alle');
+      this.gameOver = true;
+      return;
+    }
+
+    if (this.currentQuestion) {
+      this.usedQuestions.push(this.currentQuestion);
+    }
+
+    const remainingQuestions = this.allQuestions.value.filter(
+      (q) => !this.usedQuestions.includes(q)
+    );
+
+    if (remainingQuestions.length > 0) {
+      const randomIndex = Math.floor(Math.random() * remainingQuestions.length);
+      this.currentQuestion = remainingQuestions[randomIndex];
+      this.allQuestions.next(remainingQuestions);
+    } else {
+      this.currentQuestion = null;
+      this.gameOver = true;
+    }
+
+    this.isNextQuestionButtonDisabled = !this.isNextQuestionButtonDisabled;
+    setTimeout(() => {
+      this.isNextQuestionButtonDisabled = true;
+    }, 50);
+
+    console.log('Nächste Frage', this.currentQuestion);
   }
 }

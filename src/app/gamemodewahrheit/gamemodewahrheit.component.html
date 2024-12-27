@@ -1,12 +1,23 @@
-<div *ngIf="frage$ | async as fragen; else error">
-  <ul>
-    <li *ngFor="let frage of fragen">
-      {{ frage.inhalt }} - {{ frage.art }} - {{ frage.intensitaet }}
-    </li>
-  </ul>
+<div class="questions">
+  <div *ngIf="currentQuestion; else noQuestions">
+    <p><strong>Frage:</strong> {{ currentQuestion.inhalt }}</p>
+  </div>
+</div>
+<hr />
+<div class="button-container">
+  <button
+    mat-button
+    (click)="onNextQuestionClick()"
+    [ngClass]="{
+      'nextQuestion-button': isNextQuestionButtonDisabled,
+      'nextQuestion-buttonEnabled': !isNextQuestionButtonDisabled
+    }"
+  >
+    Nächste Frage
+  </button>
 </div>
 
-<ng-template #error>
+<ng-template #noQuestions>
   <p>Ein Fehler ist aufgetreten du Lelek</p>
 </ng-template>
 <router-outlet></router-outlet>
