@@ -13,13 +13,13 @@ import { ButtonListService } from '../button-list.service';
 })
 export class GamemodeselectionComponent {
   isSanftAllgButtonDisabled = true;
-  isMittelAllgButtonDisabled = true;
+  isMiddleAllgButtonDisabled = true;
   isHardAllgButtonDisabled = true;
   isSanftSexButtonDisabled = true;
-  isMittelSexButtonDisabled = true;
+  isMiddleSexButtonDisabled = true;
   isHardSexButtonDisabled = true;
   isSanftDarkButtonDisabled = true;
-  isMittelDarkButtonDisabled = true;
+  isMiddleDarkButtonDisabled = true;
   isHardDarkButtonDisabled = true;
   isGamestartButton = true;
 
@@ -28,8 +28,8 @@ export class GamemodeselectionComponent {
   toggleButtonSanftAllg() {
     this.isSanftAllgButtonDisabled = !this.isSanftAllgButtonDisabled;
   }
-  toggleButtonMittelAllg() {
-    this.isMittelAllgButtonDisabled = !this.isMittelAllgButtonDisabled;
+  toggleButtonMiddleAllg() {
+    this.isMiddleAllgButtonDisabled = !this.isMiddleAllgButtonDisabled;
   }
   toggleButtonHardAllg() {
     this.isHardAllgButtonDisabled = !this.isHardAllgButtonDisabled;
@@ -37,8 +37,8 @@ export class GamemodeselectionComponent {
   toggleButtonSanftSex() {
     this.isSanftSexButtonDisabled = !this.isSanftSexButtonDisabled;
   }
-  toggleButtonMittelSex() {
-    this.isMittelSexButtonDisabled = !this.isMittelSexButtonDisabled;
+  toggleButtonMiddleSex() {
+    this.isMiddleSexButtonDisabled = !this.isMiddleSexButtonDisabled;
   }
   toggleButtonHardSex() {
     this.isHardSexButtonDisabled = !this.isHardSexButtonDisabled;
@@ -46,8 +46,8 @@ export class GamemodeselectionComponent {
   toggleButtonSanftDark() {
     this.isSanftDarkButtonDisabled = !this.isSanftDarkButtonDisabled;
   }
-  toggleButtonMittelDark() {
-    this.isMittelDarkButtonDisabled = !this.isMittelDarkButtonDisabled;
+  toggleButtonMiddleDark() {
+    this.isMiddleDarkButtonDisabled = !this.isMiddleDarkButtonDisabled;
   }
   toggleButtonHardDark() {
     this.isHardDarkButtonDisabled = !this.isHardDarkButtonDisabled;
@@ -62,13 +62,13 @@ export class GamemodeselectionComponent {
     console.log('Button wurde geklickt');
     this.buttonsList = [];
     if (!this.isSanftAllgButtonDisabled) this.buttonsList.push('SanftAllg');
-    if (!this.isMittelAllgButtonDisabled) this.buttonsList.push('MittelAllg');
+    if (!this.isMiddleAllgButtonDisabled) this.buttonsList.push('MiddleAllg');
     if (!this.isHardAllgButtonDisabled) this.buttonsList.push('HardAllg');
     if (!this.isSanftSexButtonDisabled) this.buttonsList.push('SanftSex');
-    if (!this.isMittelSexButtonDisabled) this.buttonsList.push('MittelSex');
+    if (!this.isMiddleSexButtonDisabled) this.buttonsList.push('MiddleSex');
     if (!this.isHardSexButtonDisabled) this.buttonsList.push('HardSex');
     if (!this.isSanftDarkButtonDisabled) this.buttonsList.push('SanftDark');
-    if (!this.isMittelDarkButtonDisabled) this.buttonsList.push('MittelDark');
+    if (!this.isMiddleDarkButtonDisabled) this.buttonsList.push('MiddleDark');
     if (!this.isHardDarkButtonDisabled) this.buttonsList.push('hardDark');
     //console.log('Nicht deaktivierte Buttons:', this.buttonsList);
     this.buttonListService.setButtonsList(this.buttonsList);
