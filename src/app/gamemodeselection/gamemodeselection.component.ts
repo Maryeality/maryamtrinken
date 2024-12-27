@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet, Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { ButtonListService } from '../button-list.service';
 
 @Component({
   selector: 'app-gamemodeselection',
@@ -12,49 +13,65 @@ import { CommonModule } from '@angular/common';
 })
 export class GamemodeselectionComponent {
   isSanftAllgButtonDisabled = true;
-  isMittelAllgButtonDisabled = true;
-  isHartAllgButtonDisabled = true;
+  isMiddleAllgButtonDisabled = true;
+  isHardAllgButtonDisabled = true;
   isSanftSexButtonDisabled = true;
-  isMittelSexButtonDisabled = true;
-  isHartSexButtonDisabled = true;
+  isMiddleSexButtonDisabled = true;
+  isHardSexButtonDisabled = true;
   isSanftDarkButtonDisabled = true;
-  isMittelDarkButtonDisabled = true;
-  isHartDarkButtonDisabled = true;
+  isMiddleDarkButtonDisabled = true;
+  isHardDarkButtonDisabled = true;
   isGamestartButton = true;
+
+  buttonsList: string[] = [];
 
   toggleButtonSanftAllg() {
     this.isSanftAllgButtonDisabled = !this.isSanftAllgButtonDisabled;
   }
-  toggleButtonMittelAllg() {
-    this.isMittelAllgButtonDisabled = !this.isMittelAllgButtonDisabled;
+  toggleButtonMiddleAllg() {
+    this.isMiddleAllgButtonDisabled = !this.isMiddleAllgButtonDisabled;
   }
-  toggleButtonHartAllg() {
-    this.isHartAllgButtonDisabled = !this.isHartAllgButtonDisabled;
+  toggleButtonHardAllg() {
+    this.isHardAllgButtonDisabled = !this.isHardAllgButtonDisabled;
   }
   toggleButtonSanftSex() {
     this.isSanftSexButtonDisabled = !this.isSanftSexButtonDisabled;
   }
-  toggleButtonMittelSex() {
-    this.isMittelSexButtonDisabled = !this.isMittelSexButtonDisabled;
+  toggleButtonMiddleSex() {
+    this.isMiddleSexButtonDisabled = !this.isMiddleSexButtonDisabled;
   }
-  toggleButtonHartSex() {
-    this.isHartSexButtonDisabled = !this.isHartSexButtonDisabled;
+  toggleButtonHardSex() {
+    this.isHardSexButtonDisabled = !this.isHardSexButtonDisabled;
   }
   toggleButtonSanftDark() {
     this.isSanftDarkButtonDisabled = !this.isSanftDarkButtonDisabled;
   }
-  toggleButtonMittelDark() {
-    this.isMittelDarkButtonDisabled = !this.isMittelDarkButtonDisabled;
+  toggleButtonMiddleDark() {
+    this.isMiddleDarkButtonDisabled = !this.isMiddleDarkButtonDisabled;
   }
-  toggleButtonHartDark() {
-    this.isHartDarkButtonDisabled = !this.isHartDarkButtonDisabled;
+  toggleButtonHardDark() {
+    this.isHardDarkButtonDisabled = !this.isHardDarkButtonDisabled;
   }
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private buttonListService: ButtonListService
+  ) {}
 
   onGamestartClick() {
     console.log('Button wurde geklickt');
+    this.buttonsList = [];
+    if (!this.isSanftAllgButtonDisabled) this.buttonsList.push('SanftAllg');
+    if (!this.isMiddleAllgButtonDisabled) this.buttonsList.push('MiddleAllg');
+    if (!this.isHardAllgButtonDisabled) this.buttonsList.push('HardAllg');
+    if (!this.isSanftSexButtonDisabled) this.buttonsList.push('SanftSex');
+    if (!this.isMiddleSexButtonDisabled) this.buttonsList.push('MiddleSex');
+    if (!this.isHardSexButtonDisabled) this.buttonsList.push('HardSex');
+    if (!this.isSanftDarkButtonDisabled) this.buttonsList.push('SanftDark');
+    if (!this.isMiddleDarkButtonDisabled) this.buttonsList.push('MiddleDark');
+    if (!this.isHardDarkButtonDisabled) this.buttonsList.push('hardDark');
+    //console.log('Nicht deaktivierte Buttons:', this.buttonsList);
+    this.buttonListService.setButtonsList(this.buttonsList);
     this.router.navigate(['/wahrheit']);
-    // if !this.isSanftAllgButtonDisabled =
   }
 }
