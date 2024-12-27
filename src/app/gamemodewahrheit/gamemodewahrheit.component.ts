@@ -48,14 +48,14 @@ export class GamemodewahrheitComponent implements OnInit {
     console.log('Button-Liste:', this.buttonsList);
 
     const buttonMappings = [
-      { button: 'SanftAllg', category: 'kategorieAllg', intensity: 'sanft' },
-      { button: 'MittelAllg', category: 'kategorieAllg', intensity: 'mittel' },
+      { button: 'SoftAllg', category: 'kategorieAllg', intensity: 'soft' },
+      { button: 'MiddleAllg', category: 'kategorieAllg', intensity: 'middle' },
       { button: 'HardAllg', category: 'kategorieAllg', intensity: 'hard' },
-      { button: 'SanftSex', category: 'kategorieSex', intensity: 'sanft' },
-      { button: 'MittelSex', category: 'kategorieSex', intensity: 'mittel' },
+      { button: 'SoftSex', category: 'kategorieSex', intensity: 'soft' },
+      { button: 'MiddleSex', category: 'kategorieSex', intensity: 'middle' },
       { button: 'HardSex', category: 'kategorieSex', intensity: 'hard' },
-      { button: 'SanftDark', category: 'kategorieDark', intensity: 'sanft' },
-      { button: 'MittelDark', category: 'kategorieDark', intensity: 'mittel' },
+      { button: 'SoftDark', category: 'kategorieDark', intensity: 'soft' },
+      { button: 'MiddleDark', category: 'kategorieDark', intensity: 'middle' },
       { button: 'HardDark', category: 'kategorieDark', intensity: 'hard' },
     ];
 
