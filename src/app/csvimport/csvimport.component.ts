@@ -37,13 +37,13 @@ export class CSVImportComponent {
 
   private parseCSV(data: string): void {
     const lines = data.split('\n');
-    const headers = lines[0].split(',').map((header) => header.trim());
+    const headers = lines[0].split(';').map((header) => header.trim());
 
     console.log('Headers:', headers);
 
     const questions: Frage[] = [];
     for (let i = 1; i < lines.length; i++) {
-      const row = lines[i].split(',').map((value) => value.trim());
+      const row = lines[i].split(';').map((value) => value.trim());
 
       console.log('Row:', row);
 
