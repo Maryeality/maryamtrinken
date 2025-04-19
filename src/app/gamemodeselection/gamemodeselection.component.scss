@@ -9,7 +9,6 @@
   display: flex;
   justify-content: center;
   height: 80px;
-  //font-family: ;
   color: #ede7fa !important;
   font-size: 40px;
   font-weight: 500;
@@ -17,11 +16,12 @@
 }
 
 .enabled-button,
-.disabled-button {
+.disabled-button,
+.enabled-buttonAufg,
+.disabled-buttonAufg {
   width: 200px;
   height: 60px;
   font-size: 25px;
-  //padding: 10px 50px;
   border-radius: 25px;
 }
 
@@ -34,6 +34,18 @@
 .disabled-button {
   color: #544f5f !important;
   background-color: #370d48;
+  border: 4px solid #3d5d5d;
+}
+
+.enabled-buttonAufg {
+  color: #ede7fa !important;
+  background-color: #13359e;
+  border: 4px solid #65d9d9;
+}
+
+.disabled-buttonAufg {
+  color: #544f5f !important;
+  background-color: #0d1948;
   border: 4px solid #3d5d5d;
 }
 

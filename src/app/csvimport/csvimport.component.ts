@@ -47,7 +47,6 @@ export class CSVImportComponent {
 
       console.log('Row:', row);
 
-      // Überspringen, falls Zeile leer ist oder nicht genügend Spalten hat
       if (row.length < headers.length) {
         console.warn(`Überspringe unvollständige Zeile: ${row}`);
         continue;
@@ -62,7 +61,6 @@ export class CSVImportComponent {
         kategorieSex: row[headers.indexOf('kategorieSex')]?.trim() === 'true',
       };
 
-      // Validieren, ob die Frage vollständig ist
       if (question.art && question.intensitaet && question.inhalt) {
         questions.push(question);
       } else {

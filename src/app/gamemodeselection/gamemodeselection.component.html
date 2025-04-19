@@ -1,7 +1,5 @@
 <hr />
-<div class="kategorien-container">
-  Allgemeine Fragen <span class="break"></span>
-</div>
+<div class="kategorien-container">Allgemeines <span class="break"></span></div>
 <div class="button-container">
   <button
     mat-button
@@ -36,8 +34,44 @@
     {{ isHardAllgButtonDisabled ? "Hart" : "Hart" }}
   </button>
 </div>
+<div class="break"></div>
+<div class="button-container">
+  <button
+    mat-button
+    (click)="toggleButtonSoftAllgAufg()"
+    [ngClass]="{
+      'disabled-buttonAufg': isSoftAllgAufgButtonDisabled,
+      'enabled-buttonAufg': !isSoftAllgAufgButtonDisabled
+    }"
+  >
+    {{ isSoftAllgAufgButtonDisabled ? "Sanft" : "Sanft" }}
+  </button>
+
+  <button
+    mat-button
+    (click)="toggleButtonMiddleAllgAufg()"
+    [ngClass]="{
+      'disabled-buttonAufg': isMiddleAllgAufgButtonDisabled,
+      'enabled-buttonAufg': !isMiddleAllgAufgButtonDisabled
+    }"
+  >
+    {{ isMiddleAllgAufgButtonDisabled ? "Mittel" : "Mittel" }}
+  </button>
+
+  <button
+    mat-button
+    (click)="toggleButtonHardAllgAufg()"
+    [ngClass]="{
+      'disabled-buttonAufg': isHardAllgAufgButtonDisabled,
+      'enabled-buttonAufg': !isHardAllgAufgButtonDisabled
+    }"
+  >
+    {{ isHardAllgAufgButtonDisabled ? "Hart" : "Hart" }}
+  </button>
+</div>
+
 <hr />
-<div class="kategorien-container">Sexuelle Fragen</div>
+<div class="kategorien-container">Sexuelles <span class="break"></span></div>
 <div class="button-container">
   <button
     mat-button
@@ -72,8 +106,44 @@
     {{ isHardSexButtonDisabled ? "Hart" : "Hart" }}
   </button>
 </div>
+<div class="break"></div>
+<div class="button-container">
+  <button
+    mat-button
+    (click)="toggleButtonSoftSexAufg()"
+    [ngClass]="{
+      'disabled-buttonAufg': isSoftSexAufgButtonDisabled,
+      'enabled-buttonAufg': !isSoftSexAufgButtonDisabled
+    }"
+  >
+    {{ isSoftSexAufgButtonDisabled ? "Sanft" : "Sanft" }}
+  </button>
+
+  <button
+    mat-button
+    (click)="toggleButtonMiddleSexAufg()"
+    [ngClass]="{
+      'disabled-buttonAufg': isMiddleSexAufgButtonDisabled,
+      'enabled-buttonAufg': !isMiddleSexAufgButtonDisabled
+    }"
+  >
+    {{ isMiddleSexAufgButtonDisabled ? "Mittel" : "Mittel" }}
+  </button>
+
+  <button
+    mat-button
+    (click)="toggleButtonHardSexAufg()"
+    [ngClass]="{
+      'disabled-buttonAufg': isHardSexAufgButtonDisabled,
+      'enabled-buttonAufg': !isHardSexAufgButtonDisabled
+    }"
+  >
+    {{ isHardSexAufgButtonDisabled ? "Hart" : "Hart" }}
+  </button>
+</div>
+
 <hr />
-<div class="kategorien-container">Depressive Fragen</div>
+<div class="kategorien-container">Depressives<span class="break"></span></div>
 <div class="button-container">
   <button
     mat-button
@@ -108,6 +178,42 @@
     {{ isHardDarkButtonDisabled ? "Hart" : "Hart" }}
   </button>
 </div>
+<div class="break"></div>
+<div class="button-container">
+  <button
+    mat-button
+    (click)="toggleButtonSoftDarkAufg()"
+    [ngClass]="{
+      'disabled-buttonAufg': isSoftDarkAufgButtonDisabled,
+      'enabled-buttonAufg': !isSoftDarkAufgButtonDisabled
+    }"
+  >
+    {{ isSoftDarkAufgButtonDisabled ? "Sanft" : "Sanft" }}
+  </button>
+
+  <button
+    mat-button
+    (click)="toggleButtonMiddleDarkAufg()"
+    [ngClass]="{
+      'disabled-buttonAufg': isMiddleDarkAufgButtonDisabled,
+      'enabled-buttonAufg': !isMiddleDarkAufgButtonDisabled
+    }"
+  >
+    {{ isMiddleDarkAufgButtonDisabled ? "Mittel" : "Mittel" }}
+  </button>
+
+  <button
+    mat-button
+    (click)="toggleButtonHardDarkAufg()"
+    [ngClass]="{
+      'disabled-buttonAufg': isHardDarkAufgButtonDisabled,
+      'enabled-buttonAufg': !isHardDarkAufgButtonDisabled
+    }"
+  >
+    {{ isHardDarkAufgButtonDisabled ? "Hart" : "Hart" }}
+  </button>
+</div>
+
 <hr />
 <div class="button-container">
   <button

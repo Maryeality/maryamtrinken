@@ -49,21 +49,121 @@ export class GamemodewahrheitComponent implements OnInit {
     console.log('Button-Liste:', this.buttonsList);
 
     const buttonMappings = [
-      { button: 'SoftAllg', category: 'kategorieAllg', intensity: 'soft' },
-      { button: 'MiddleAllg', category: 'kategorieAllg', intensity: 'middle' },
-      { button: 'HardAllg', category: 'kategorieAllg', intensity: 'hard' },
-      { button: 'SoftSex', category: 'kategorieSex', intensity: 'soft' },
-      { button: 'MiddleSex', category: 'kategorieSex', intensity: 'middle' },
-      { button: 'HardSex', category: 'kategorieSex', intensity: 'hard' },
-      { button: 'SoftDark', category: 'kategorieDark', intensity: 'soft' },
-      { button: 'MiddleDark', category: 'kategorieDark', intensity: 'middle' },
-      { button: 'HardDark', category: 'kategorieDark', intensity: 'hard' },
+      {
+        button: 'SoftAllg',
+        art: 'Frage',
+        category: 'kategorieAllg',
+        intensity: 'soft',
+      },
+      {
+        button: 'MiddleAllg',
+        art: 'Frage',
+        category: 'kategorieAllg',
+        intensity: 'middle',
+      },
+      {
+        button: 'HardAllg',
+        art: 'Frage',
+        category: 'kategorieAllg',
+        intensity: 'hard',
+      },
+      {
+        button: 'SoftAllgAufg',
+        art: 'Aufgabe',
+        category: 'kategorieAllg',
+        intensity: 'soft',
+      },
+      {
+        button: 'MiddleAllgAufg',
+        art: 'Aufgabe',
+        category: 'kategorieAllg',
+        intensity: 'middle',
+      },
+      {
+        button: 'HardAllgAufg',
+        art: 'Aufgabe',
+        category: 'kategorieAllg',
+        intensity: 'hard',
+      },
+      {
+        button: 'SoftSex',
+        art: 'Frage',
+        category: 'kategorieSex',
+        intensity: 'soft',
+      },
+      {
+        button: 'MiddleSex',
+        art: 'Frage',
+        category: 'kategorieSex',
+        intensity: 'middle',
+      },
+      {
+        button: 'HardSex',
+        art: 'Frage',
+        category: 'kategorieSex',
+        intensity: 'hard',
+      },
+      {
+        button: 'SoftSexAufg',
+        art: 'Aufgabe',
+        category: 'kategorieSex',
+        intensity: 'soft',
+      },
+      {
+        button: 'MiddleSexAufg',
+        art: 'Aufgabe',
+        category: 'kategorieSex',
+        intensity: 'middle',
+      },
+      {
+        button: 'HardSexAufg',
+        art: 'Aufgabe',
+        category: 'kategorieSex',
+        intensity: 'hard',
+      },
+      {
+        button: 'SoftDark',
+        art: 'Frage',
+        category: 'kategorieDark',
+        intensity: 'soft',
+      },
+      {
+        button: 'MiddleDark',
+        art: 'Frage',
+        category: 'kategorieDark',
+        intensity: 'middle',
+      },
+      {
+        button: 'HardDark',
+        art: 'Frage',
+        category: 'kategorieDark',
+        intensity: 'hard',
+      },
+      {
+        button: 'SoftDarkAufg',
+        art: 'Aufgabe',
+        category: 'kategorieDark',
+        intensity: 'soft',
+      },
+      {
+        button: 'MiddleDarkAufg',
+        art: 'Aufgabe',
+        category: 'kategorieDark',
+        intensity: 'middle',
+      },
+      {
+        button: 'HardDarkAufg',
+        art: 'Aufgabe',
+        category: 'kategorieDark',
+        intensity: 'hard',
+      },
     ];
 
-    buttonMappings.forEach(({ button, category, intensity }) => {
+    buttonMappings.forEach(({ button, art, category, intensity }) => {
       if (this.buttonsList.includes(button)) {
         const q = query(
           this.frageCollection,
+          where('art', '==', art),
           where(category, '==', true),
           where('intensitaet', '==', intensity)
         );
