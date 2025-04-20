@@ -6,8 +6,8 @@ import { CSVImportComponent } from './csvimport/csvimport.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'game', component: GamemodeselectionComponent },
-  { path: 'wahrheit', component: GamemodewahrheitComponent },
-  { path: 'csvimport', component: CSVImportComponent },
-  { path: '', redirectTo: 'game', pathMatch: 'full' },
+  { path: 'selection', component: GamemodeselectionComponent },
+  { path: 'game', component: GamemodewahrheitComponent },
+  { path: 'csv', component: CSVImportComponent },
+  { path: '', redirectTo: 'selection', pathMatch: 'full' },
 ];

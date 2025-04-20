@@ -25,28 +25,32 @@
   border-radius: 25px;
 }
 
-.enabled-button {
+.enabled-button,
+.enabled-buttonAufg {
   color: #ede7fa !important;
-  background-color: #872ab9;
   border: 4px solid #65d9d9;
+}
+
+.disabled-button,
+.disabled-buttonAufg {
+  color: #544f5f !important;
+  border: 4px solid #3d5d5d;
+}
+
+.enabled-button {
+  background-color: #872ab9;
 }
 
 .disabled-button {
-  color: #544f5f !important;
   background-color: #370d48;
-  border: 4px solid #3d5d5d;
 }
 
 .enabled-buttonAufg {
-  color: #ede7fa !important;
   background-color: #13359e;
-  border: 4px solid #65d9d9;
 }
 
 .disabled-buttonAufg {
-  color: #544f5f !important;
   background-color: #0d1948;
-  border: 4px solid #3d5d5d;
 }
 
 .gamestart-button {

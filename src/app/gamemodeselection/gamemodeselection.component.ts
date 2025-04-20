@@ -123,6 +123,6 @@ export class GamemodeselectionComponent {
     if (!this.isHardDarkAufgButtonDisabled)
       this.buttonsList.push('HardDarkAufg');
     this.buttonListService.setButtonsList(this.buttonsList);
-    this.router.navigate(['/wahrheit']);
+    this.router.navigate(['/game']);
   }
 }
